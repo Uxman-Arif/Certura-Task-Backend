@@ -15,7 +15,7 @@ const upload = multer({ storage: storage });
 
 async function newblogcreate(req, res) {
     data = req.body;
-    await blogModel.create({title: data.title, description: data.description, image: req.file?.filename});
+    await blogModel.create({title: data.title, description: data.description, image: req.file?.filename, owner:req.user._id});
     return res.json('Blog is Created successfully!');
 };
 module.exports = {

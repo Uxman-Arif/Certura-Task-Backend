@@ -11,6 +11,10 @@ const blogSchema = mongoose.Schema({
     },
     image: {
         type:String
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
     }
 });
 const blogModel = mongoose.model('blogs', blogSchema)

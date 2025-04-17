@@ -1,8 +1,9 @@
 const { blogModel } = require('../../models/blogmodel');
 
-function blogs(req, res) {
-    blogModel.create({title:'test', description : 'This is only for testing purpose'});
-    res.send('yes its also running from routes');
+async function blogs(req, res) {
+    console.log('here')
+    const allblogs = await blogModel.find({});
+    return res.json(allblogs);
 };
 
 module.exports = {
