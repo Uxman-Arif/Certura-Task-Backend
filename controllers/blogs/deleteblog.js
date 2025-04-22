@@ -2,8 +2,6 @@ const { blogModel } = require('../../models/blogmodel');
 
 async function deleteBlog(req, res) {
     const blogId = req.params.id;
-    console.log(blogId)
-    console.log('here in delete')
 
     const deletedBlog = await blogModel.findByIdAndDelete(blogId);
     const blogs = await blogModel.find({});
