@@ -1,4 +1,4 @@
-const { cartitemsModel, cartModel } = require('../models/cartmodel');
+const { cartitemsModel, cartModel } = require('../../models/cartmodel');
 
 async function cartfnc(req, res) {
     const cartid = req.params.id;

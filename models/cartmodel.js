@@ -12,7 +12,7 @@ const cartitemsSchema = mongoose.Schema({
         
     owner: {
         type:mongoose.Schema.Types.ObjectId,
-        ref:'ecomuserModel'
+        ref:'user'
     }
 });
 
@@ -28,7 +28,7 @@ const cartSchema = mongoose.Schema({
         
     owner: {
         type:mongoose.Schema.Types.ObjectId,
-        ref:'ecomuserModel'
+        ref:'user'
     }
 })
 

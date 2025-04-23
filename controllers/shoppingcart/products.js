@@ -1,4 +1,4 @@
-const { productModel, productrevieModel } = require('../models/productmodel');
+const { productModel, productrevieModel } = require('../../models/productmodel');
 const multer = require('multer');
 
 const storage = multer.diskStorage({

@@ -20,7 +20,7 @@ const productSchema = mongoose.Schema({
     },
     owner: {
         type:mongoose.Schema.Types.ObjectId,
-        ref:'ecomuserModel'
+        ref:'user'
     }
 });
 
@@ -37,7 +37,7 @@ const productreviewSchema = mongoose.Schema({
     },
     owner: {
         type:mongoose.Schema.Types.ObjectId,
-        ref:'ecomuserModel'
+        ref:'user'
     }
 });
 

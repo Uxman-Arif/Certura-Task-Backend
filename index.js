@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+const  router = require('./routes/ecomroutes');
 const blogrouter = require('./routes/blogroutes');
 const userrouter = require('./routes/userroutes');
 const {verifyToken} = require('./middlewares/userverify');
@@ -13,6 +14,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cors());
 app.use('/blog', verifyToken, blogrouter);
 app.use('/users', userrouter);
+app.use('/', verifyToken, router);
 app.get('/api/profile', verifyToken, (req, res) => {
     res.json({ msg: 'authorized', user: req.user });
   });
