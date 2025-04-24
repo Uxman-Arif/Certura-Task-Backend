@@ -14,6 +14,7 @@ const upload = multer({ storage: storage });
 
 
 async function index(req, res) {
+    console.log('yes here in products')
     const products = await productModel.find({});
     return res.json({'products':products});
 };
