@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.get('/products', index).post('/products', upload.single('picture'), prodsave);
 router.get('/checkout/:id', checkout).post('/checkout/:id', uploadreview);
-router.get('/cart/:id', cartfnc).post('/cart', creatcart).patch('/cart', quantityhandle).delete('/cart', deletecartitem);
+router.get('/cart/:id', cartfnc).post('/cart', creatcart).patch('/cart', quantityhandle).delete('/cart', deletecartitem).delete('/cart/:id', deletecartitem);
 
 module.exports =  router;

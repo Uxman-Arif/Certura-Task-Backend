@@ -6,6 +6,6 @@ const userprofile = require('../controllers/users/profile');
 
 userrouter.post('/signup', upload.single('profilePic'), userRegister);
 userrouter.post('/signin', Signin);
-userrouter.get('/profile', userprofile);
+userrouter.get('/profile/:id', userprofile);
 
 module.exports = userrouter;
