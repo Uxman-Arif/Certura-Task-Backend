@@ -54,9 +54,22 @@ async function deletecartitem(req, res) {
     return res.json({msg:'product deleted successfully!'});
 };
 
+async function deleteallitem(req, res) {
+    const userid = req.params.id;
+    console.log('ey')
+    console.log(userid);
+    await cartitemsModel.deleteMany({owner:userid});
+    await cartModel.deleteMany({owner:userid});
+    const cart = await cartModel.find({owner:data.owner})
+    const cartitems = await cartitemsModel.find({owner:data.owner}).populate('product');
+
+    return res.json({'cart':cart, 'cartitems':cartitems});
+};
+
 module.exports = {
     cartfnc, 
     creatcart,
     quantityhandle,
-    deletecartitem
+    deletecartitem,
+    deleteallitem
 }

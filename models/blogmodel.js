@@ -18,6 +18,24 @@ const blogSchema = mongoose.Schema({
     }
 });
 const blogModel = mongoose.model('blogs', blogSchema)
+
+const blogreviewSchema = mongoose.Schema({
+    review: {
+        type: String,
+        required: true
+    },
+    blog: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'blogs',
+    },
+    owner: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'user'
+    }
+});
+
+const blogrevieModel = mongoose.model('blogreview', blogreviewSchema);
 module.exports = {
-    blogModel
+    blogModel,
+    blogrevieModel
 }

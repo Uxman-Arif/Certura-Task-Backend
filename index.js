@@ -24,7 +24,7 @@ const io = new Server(server, {
   }
 });
 
-socketHandler(io); // ✅ Use modular socket logic here
+socketHandler(io);
 
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
